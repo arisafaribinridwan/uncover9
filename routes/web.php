@@ -42,3 +42,24 @@ Route::get(
         return "Cek Sisa stok barang $merk $tipe";
     }
 );
+
+Route::redirect('/learn', '/belajar');
+
+Route::prefix('/admin')->group(function () {
+
+    Route::get('/mahasiswa', function () {
+        return '<h1>Daftar Mahasiswa</h1>';
+    });
+
+    Route::get('/dosen', function () {
+        return '<h1>Daftar Dosen</h1>';
+    });
+
+    Route::get('/karyawan', function () {
+        return '<h1>Daftar Karyawan</h1>';
+    });
+});
+
+Route::fallback(function () {
+    return '<h1>Sorry, Page not found</h1>';
+});
