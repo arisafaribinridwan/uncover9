@@ -17,3 +17,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/mahasiswa', function () {
+    $name =
+        [
+            "Ari Safari",
+            "Syaefiatul Arfah",
+            "Arsya Kalani Ibrahim",
+            "Arsya Bilfaqih Ismail",
+            "Wahyu Pangesti Utami"
+        ];
+    return view('universitas.mahasiswa', ['family' => $name]);
+});
+
+Route::get('/mahasiswa/{nama}/{umur}/{kota}', function ($nama, $umur, $kota) {
+    return view('universitas.datasiswa')
+        ->with("vnama", $nama)
+        ->with("vumur", $umur)
+        ->with("vkota", $kota);
+});
