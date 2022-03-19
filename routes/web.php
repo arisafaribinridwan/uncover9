@@ -19,15 +19,14 @@ Route::get('/', function () {
 });
 
 Route::get('/mahasiswa', function () {
-    $name =
+    $arrName =
         [
             "Ari Safari",
             "Syaefiatul Arfah",
             "Arsya Kalani Ibrahim",
-            "Arsya Bilfaqih Ismail",
-            "Wahyu Pangesti Utami"
+            "Arsya Bilfaqih Ismail"
         ];
-    return view('universitas.mahasiswa', ['family' => $name]);
+    return view('universitas.mahasiswa', ['mahasiswa' => $arrName]);
 });
 
 Route::get('/mahasiswa/{nama}/{umur}/{kota}', function ($nama, $umur, $kota) {
